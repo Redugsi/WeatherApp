@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_home">Ana Sayfa</string>
+    <string name="menu_camera">Kamera</string>
+    <string name="menu_settings">Ayarlar</string>
+</resources>

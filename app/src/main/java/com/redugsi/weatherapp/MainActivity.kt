@@ -1,29 +1,16 @@
 package com.redugsi.weatherapp
 
 import android.Manifest
-import android.annotation.SuppressLint
-import android.location.Location
 import android.os.Bundle
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
 import com.redugsi.weatherapp.api.WeatherApi
 import com.redugsi.weatherapp.ui.common.BaseInjectorActivity
 import com.redugsi.weatherapp.ui.common.navigation.MainActivityNavigationController
 import com.tbruyelle.rxpermissions2.RxPermissions
 
 import javax.inject.Inject
-import android.location.Geocoder
-import android.widget.ImageView
-import com.redugsi.weatherapp.util.Util
-import com.redugsi.weatherapp.util.connect
-import com.redugsi.weatherapp.util.toast
-import java.util.*
 import android.content.Intent
-import android.R.attr.data
-import android.support.v4.app.NotificationCompat.getExtras
 import android.graphics.Bitmap
 import android.app.Activity
-import android.util.Log
 import com.redugsi.weatherapp.event.PictureTakenEvent
 import com.redugsi.weatherapp.event.RxBus
 
@@ -31,8 +18,6 @@ import com.redugsi.weatherapp.event.RxBus
 class MainActivity : BaseInjectorActivity() {
 
     private val CAMERA_REQUEST = 1888
-    private val imageView: ImageView? = null
-    private val MY_CAMERA_PERMISSION_CODE = 100
 
     private lateinit var rxPermissions: RxPermissions
 

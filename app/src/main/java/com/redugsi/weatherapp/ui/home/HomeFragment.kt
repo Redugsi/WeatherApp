@@ -3,18 +3,16 @@ package com.redugsi.weatherapp.ui.home
 import android.os.Bundle
 import com.redugsi.weatherapp.R
 import com.redugsi.weatherapp.databinding.FragmentHomeBinding
-import com.redugsi.weatherapp.event.OnSettingsSaved
 import com.redugsi.weatherapp.event.PictureTakenEvent
 import com.redugsi.weatherapp.event.RxBus
-import com.redugsi.weatherapp.ui.camera.CameraFragment
+import com.redugsi.weatherapp.ui.camera.TakenPhotoPreviewFragment
 import com.redugsi.weatherapp.ui.common.BaseInjectableFragment
 import com.redugsi.weatherapp.util.toast
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class HomeFragment: BaseInjectableFragment<HomeViewModel, FragmentHomeBinding>(){
-
+class HomeFragment: BaseInjectableFragment<HomeViewModel, FragmentHomeBinding>(), PagerAdapterItemAddListener{
 
     private lateinit var pagerAdapter: HomePagerAdapter
 
@@ -35,7 +33,7 @@ class HomeFragment: BaseInjectableFragment<HomeViewModel, FragmentHomeBinding>()
     }
 
     private fun initial(){
-        pagerAdapter = HomePagerAdapter(childFragmentManager)
+        pagerAdapter = HomePagerAdapter(childFragmentManager, this)
         binding.viewpager.adapter = pagerAdapter
     }
 
@@ -46,13 +44,17 @@ class HomeFragment: BaseInjectableFragment<HomeViewModel, FragmentHomeBinding>()
                     if (o is PictureTakenEvent) {
                         val bitmap = o.bitmap
                         if (bitmap != null){
-                            val fragment = CameraFragment.newInstance(bitmap)
+                            val fragment = TakenPhotoPreviewFragment.newInstance(bitmap)
                             pagerAdapter.addNewFragment(fragment)
                         }else{
                             activity?.toast(resources.getString(R.string.photo_error))
                         }
                     }
                 })
+    }
+
+    override fun onItemAdded() {
+        binding.viewpager.currentItem = pagerAdapter.fragments.size - 1
     }
 
     override fun onDestroy() {

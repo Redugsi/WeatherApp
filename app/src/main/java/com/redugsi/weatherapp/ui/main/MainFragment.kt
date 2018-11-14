@@ -19,7 +19,10 @@ class MainFragment : BaseInjectableFragment<MainViewModel, FragmentMainBinding>(
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         when (p0.itemId) {
             R.id.menu_home -> binding.viewpager.currentItem = 0
-            R.id.menu_camera -> navigator.toCamera()
+            R.id.menu_camera ->{
+                navigator.toCamera()
+                return false
+            }
             R.id.menu_settings -> {
                 navigator.toSettings()
                 return false

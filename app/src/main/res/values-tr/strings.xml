@@ -12,4 +12,5 @@
     <string name="hot_degree">En yuksek sicaklik</string>
     <string name="city_not_found">Aradiginiz sehirle ilgili veri bulunamadi</string>
     <string name="photo_error">Bir hata olustu</string>
+    <string name="gps_error">Gps alinirken bir hata olustu</string>
 </resources>

@@ -13,7 +13,7 @@ import android.graphics.BitmapFactory
 import android.widget.ImageView
 
 
-class CameraFragment: Fragment(), Injectable{
+class TakenPhotoPreviewFragment: Fragment(), Injectable{
 
     private lateinit var imageView: ImageView
 
@@ -36,8 +36,8 @@ class CameraFragment: Fragment(), Injectable{
 
         val BUNDLE_BITMAP = "bundle_bitmap"
 
-        fun newInstance(bitmap: Bitmap): CameraFragment {
-            val fragment = CameraFragment()
+        fun newInstance(bitmap: Bitmap): TakenPhotoPreviewFragment {
+            val fragment = TakenPhotoPreviewFragment()
             val args = Bundle()
             args.putByteArray(BUNDLE_BITMAP, bitmapToByteArray(bitmap))
             fragment.arguments = args

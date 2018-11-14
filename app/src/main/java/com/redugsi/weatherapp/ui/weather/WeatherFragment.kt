@@ -107,11 +107,11 @@ class WeatherFragment : BaseInjectableFragment<WeatherViewModel, FragmentWeather
             val cityName = Util.getCityName(activity!!, location!!)
             if (cityName != null) {
                 storeManager.setChoosedCityName(cityName)
-                viewModel.getWeatherForecast()
-            } else {
-                viewModel.getWeatherForecast()
             }
+        }else{
+            activity?.toast(resources.getString(R.string.gps_error))
         }
+        viewModel.getWeatherForecast()
     }
 
     private fun onPermissinDenied(){

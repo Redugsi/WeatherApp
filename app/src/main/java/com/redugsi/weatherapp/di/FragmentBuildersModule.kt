@@ -1,6 +1,6 @@
 package com.redugsi.weatherapp.di
 
-import com.redugsi.weatherapp.ui.camera.CameraFragment
+import com.redugsi.weatherapp.ui.camera.TakenPhotoPreviewFragment
 import com.redugsi.weatherapp.ui.home.HomeFragment
 import com.redugsi.weatherapp.ui.main.MainFragment
 import com.redugsi.weatherapp.ui.settings.SettingsFragment
@@ -14,7 +14,7 @@ abstract class FragmentBuildersModule{
     abstract fun contributeHomeFragment(): HomeFragment
 
     @ContributesAndroidInjector
-    abstract fun contributeCameraFragment(): CameraFragment
+    abstract fun contributeCameraFragment(): TakenPhotoPreviewFragment
 
     @ContributesAndroidInjector
     abstract fun contributeSettingsFragment(): SettingsFragment

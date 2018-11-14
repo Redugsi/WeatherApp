@@ -10,7 +10,7 @@ import com.google.android.gms.location.LocationServices
 import com.redugsi.weatherapp.R
 import com.redugsi.weatherapp.api.WeatherApi
 import com.redugsi.weatherapp.databinding.FragmentWeatherBinding
-import com.redugsi.weatherapp.event.OnSettingsSaved
+import com.redugsi.weatherapp.event.OnSettingsSavedEvent
 import com.redugsi.weatherapp.event.RxBus
 import com.redugsi.weatherapp.ui.common.BaseInjectableFragment
 import com.redugsi.weatherapp.util.ResourceUtil
@@ -74,7 +74,7 @@ class WeatherFragment : BaseInjectableFragment<WeatherViewModel, FragmentWeather
         disposables.add(RxBus.getInstance().toObserverable().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { o ->
-                    if (o is OnSettingsSaved) {
+                    if (o is OnSettingsSavedEvent) {
                         checkGpsPermissionThenWeatherData()
                     }
                 })

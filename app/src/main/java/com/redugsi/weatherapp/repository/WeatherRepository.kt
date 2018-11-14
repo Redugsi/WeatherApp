@@ -12,7 +12,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class CityRepository  @Inject
+class WeatherRepository  @Inject
 internal constructor(
         private val appExecutors: AppExecutors,
         private val weatherDao: WeatherDao,

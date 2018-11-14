@@ -2,7 +2,7 @@ package com.redugsi.weatherapp.ui.settings
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.redugsi.weatherapp.event.OnSettingsSaved
+import com.redugsi.weatherapp.event.OnSettingsSavedEvent
 import com.redugsi.weatherapp.event.RxBus
 import com.redugsi.weatherapp.util.StoreManager
 import javax.inject.Inject
@@ -17,7 +17,7 @@ class SettingsViewModel @Inject constructor() : ViewModel(){
         }
 
         saveUseGpsForWeatherForecast(storeManager,checked)
-        RxBus.getInstance().send(OnSettingsSaved())
+        RxBus.getInstance().send(OnSettingsSavedEvent())
         onSaved.value = true
     }
 

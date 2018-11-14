@@ -12,7 +12,7 @@ import android.view.ViewGroup
 import com.redugsi.weatherapp.di.Injectable
 import javax.inject.Inject
 
-abstract class BaseInjectableFragment<VModel : ViewModel, DataBinding: ViewDataBinding> : Fragment(), Injectable {
+abstract class BaseInjectableFragment<VModel : ViewModel, DataBinding: ViewDataBinding> : BaseFragment(), Injectable {
 
     @Inject
     lateinit var factory: WeatherAppViewModelFactory

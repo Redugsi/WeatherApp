@@ -3,4 +3,13 @@
     <string name="menu_home">Ana Sayfa</string>
     <string name="menu_camera">Kamera</string>
     <string name="menu_settings">Ayarlar</string>
+    <string name="msg_null_response">Hata olustu</string>
+    <string name="choose_city">Sehir Seciniz</string>
+    <string name="choose_by_location">Lokasyona gore sec</string>
+    <string name="battery_status">Pil durumu</string>
+    <string name="save">Kaydet</string>
+    <string name="cold_degree">En dusuk sicaklik</string>
+    <string name="hot_degree">En yuksek sicaklik</string>
+    <string name="city_not_found">Aradiginiz sehirle ilgili veri bulunamadi</string>
+    <string name="photo_error">Bir hata olustu</string>
 </resources>

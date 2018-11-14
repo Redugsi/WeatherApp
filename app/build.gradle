@@ -48,8 +48,8 @@ kotlin {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
@@ -76,22 +76,22 @@ dependencies {
 
     // Room (use 1.1.0-beta1 for latest beta)
     implementation "android.arch.persistence.room:runtime:$room_version"
-    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version"
 
     // Paging
-    implementation "android.arch.paging:runtime:1.0.0-rc1"
+    implementation 'android.arch.paging:runtime:1.0.0-rc1'
 
     // Test helpers for LiveData
-    testImplementation "android.arch.core:core-testing:1.1.1"
+    testImplementation 'android.arch.core:core-testing:1.1.1'
 
     // Test helpers for Room
-    testImplementation "android.arch.persistence.room:testing:1.0.0"
+    testImplementation 'android.arch.persistence.room:testing:1.0.0'
 
     // Test implementation for Kotlin
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
     testImplementation 'org.mockito:mockito-core:2.13.0'
     testImplementation 'org.assertj:assertj-core:3.8.0'
-    testImplementation "com.nhaarman:mockito-kotlin-kt1.1:1.5.0"
+    testImplementation 'com.nhaarman:mockito-kotlin-kt1.1:1.5.0'
 
     // Android Dagger
     implementation "com.google.dagger:dagger:$dagger_version"
@@ -99,12 +99,13 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$dagger_version"
     annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
-
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     kapt "com.google.dagger:dagger-android-support:2.14.1"
 
     // Retrofit Version
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
@@ -114,4 +115,7 @@ dependencies {
     // Rx
     implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+    //Google Service
+    implementation "com.google.android.gms:play-services-location:16.0.0"
 }

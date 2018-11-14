@@ -6,4 +6,4 @@ data class Wind(
         @SerializedName("speed")
         var speed: Double? = null,
         @SerializedName("deg")
-        var deg: Int? = null)
+        var deg: Double? = null)

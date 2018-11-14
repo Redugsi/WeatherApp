@@ -19,7 +19,7 @@ var wind: Wind? = null,
 @SerializedName("clouds")
 var clouds: Clouds? = null,
 @SerializedName("dt")
-var dt: Int? = null,
+var dt: Double? = null,
 @SerializedName("sys")
 var sys: Sys? = null,
 @SerializedName("id")
